@@ -1,0 +1,40 @@
+Joins:
+
+  Inner join - you specify two columns to be equal to join two tables and only return the results
+  that have matches.
+
+    SELECT e.title, v.name
+    FROM events e JOIN venues v
+    ON e.venue_id = v.venue_id
+
+Outer Joins:
+
+  Outer Left join - you specify two columns to be equal to join two tables and return all the rows
+  from the left table regardless of if the two columns are equal. However results from the right
+  table will only be displayed where there is a match in the left table.
+
+    SELECT e.title, v.name
+    FROM events e LEFT JOIN venues v
+    ON e.venue_id = v.venue_id
+
+  Outer Right join - Is similar to a right join except the right tables rows are all returned and
+  joined only with the rows in the left table that match the ON statement.
+
+    SELECT e.title, v.name
+    FROM events e RIGHT JOIN venues v
+    ON e.venue_id = v.venue_id
+
+  Full Outer join - Return all of the rows from both tables and only join together the rows that
+  match the ON statement.
+
+    SELECT e.title, v.name
+    FROM events e FULL JOIN venues v
+    ON e.venue_id = v.venue_id
+
+Index types:
+
+  hash - similar to a hashmap or map. Only works efficiently for exact matches. Doesn't handle
+  range queries.
+
+  btree - uses a binary tree structure. Because of the tree structure, ranges can be searched
+  with efficiently.
